@@ -20,12 +20,12 @@ export class AppComponent {
 
   ngOnInit() {
     this.router.queryParams.subscribe((paramMap) => {
-      this.token = paramMap.get("token");
+      this.token = paramMap["token"];
       if (!this.token) {
         console.log("missing token");
         return;
       }
-      this.redirectUrl = paramMap.get("redirectUrl");
+      this.redirectUrl = paramMap["redirectUrl"];
       if (!this.redirectUrl) {
         console.log("missing redirect url");
         return;
@@ -38,7 +38,8 @@ export class AppComponent {
           window.location.href = this.redirectUrl;
         })
         .catch((e) => {
-          alert(e);
+          console.log(e)
+          alert(JSON.stringify(e));
         });
     });
   }
