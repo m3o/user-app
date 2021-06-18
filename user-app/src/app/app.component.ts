@@ -6,6 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 const verifyEndpoint =
   "https://angry-cori-854281.netlify.app/.netlify/functions/verify";
 
+  
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
