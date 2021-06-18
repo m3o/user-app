@@ -19,7 +19,7 @@ export class AppComponent {
   constructor(private http: HttpClient, private router: ActivatedRoute) {}
 
   ngOnInit() {
-    this.router.paramMap.subscribe((paramMap) => {
+    this.router.queryParams.subscribe((paramMap) => {
       this.token = paramMap.get("token");
       if (!this.token) {
         console.log("missing token");
