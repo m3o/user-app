@@ -4,7 +4,7 @@ const m3o = require('@m3o/m3o-node');
 
 exports.handler = async function (event, context) {
   let body = JSON.parse(event.body);
-  let response = await new m3o.Client({ token: API_KEY }).call('user1', 'VerifyEmail', {
+  let response = await new m3o.Client({ token: API_KEY }).call('user', 'VerifyEmail', {
     token: body.token,
   });
   return {
