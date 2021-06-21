@@ -9,8 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@m3o/m3o-node": "^0.0.7",
+    "@m3o/m3o-node": "^0.0.13",
     "@netlify/zip-it-and-ship-it": "^4.4.1"
   }
 }
-
