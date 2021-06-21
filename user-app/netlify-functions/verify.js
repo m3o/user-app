@@ -39,11 +39,10 @@ exports.handler = async function (event, context) {
       e.response &&
       e.response.data &&
       e.response.data.Detail &&
-      e.response.data.Detail.error
     ) {
       return {
         statusCode: 500,
-        body: JSON.stringify({ error: e.response.data.Detail.error }),
+        body: JSON.stringify({ error: e.response.data.Detail }),
       };
     }
     return {
