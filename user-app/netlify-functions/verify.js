@@ -34,9 +34,21 @@ exports.handler = async function (event, context) {
     if (e && e.response && e.response.data) {
       console.log(e.response.data);
     }
+    if (
+      e &&
+      e.response &&
+      e.response.data &&
+      e.response.data.Detail &&
+      e.response.data.Detail.error
+    ) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: e.response.data.Detail.error }),
+      };
+    }
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: e.response.data.Detail }),
+      body: JSON.stringify({ error: "something went wrong" }),
     };
   }
 };
