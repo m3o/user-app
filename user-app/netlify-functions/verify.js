@@ -17,7 +17,7 @@ exports.handler = async function (event, context) {
       body: JSON.stringify({ error: "no token" }),
     };
   }
-  console.log(body)
+  console.log(body);
   try {
     let response = await new m3o.Client({ token: API_KEY }).call(
       "user",
@@ -34,7 +34,7 @@ exports.handler = async function (event, context) {
     console.log(e);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: JSON.stringify(e) }),
+      body: JSON.stringify({ error: "something went wrong" }),
     };
   }
 };
