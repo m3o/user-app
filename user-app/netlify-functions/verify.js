@@ -32,7 +32,7 @@ exports.handler = async function (event, context) {
     };
   } catch (e) {
     if (e && e.response && e.response.data) {
-      console.log(e?.response?.data);
+      console.log(e.response.data);
     }
     return {
       statusCode: 500,
