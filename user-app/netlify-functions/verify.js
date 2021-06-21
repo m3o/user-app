@@ -9,7 +9,7 @@ exports.handler = async function (event, context) {
       body: { error: "no api key" },
     };
   }
-  
+
   let body = JSON.parse(event.body);
   if (!body.token) {
     return {
@@ -17,6 +17,7 @@ exports.handler = async function (event, context) {
       body: { error: "no token" },
     };
   }
+  console.log(body)
   try {
     let response = await new m3o.Client({ token: API_KEY }).call(
       "user",
