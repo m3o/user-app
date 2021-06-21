@@ -6,7 +6,7 @@ exports.handler = async function (event, context) {
   if (!API_KEY) {
     return {
       statusCode: 500,
-      body: { error: "no api key" },
+      body: JSON.stringify({ error: "no api key" }),
     };
   }
 
@@ -14,7 +14,7 @@ exports.handler = async function (event, context) {
   if (!body.token) {
     return {
       statusCode: 400,
-      body: { error: "no token" },
+      body: JSON.stringify({ error: "no token" }),
     };
   }
   console.log(body)
@@ -34,7 +34,7 @@ exports.handler = async function (event, context) {
     console.log(e);
     return {
       statusCode: 500,
-      body: { error: JSON.stringify(e) },
+      body: JSON.stringify({ error: JSON.stringify(e) }),
     };
   }
 };
