@@ -16,16 +16,32 @@ export class AppComponent {
   redirectUrl = '';
   failureRedirectUrl = '';
   token = '';
+  email = '';
+  id = '';
 
   constructor(private http: HttpClient, private router: ActivatedRoute) {}
 
   ngOnInit() {
     this.router.queryParams.subscribe((paramMap) => {
       this.token = paramMap['token'];
+      this.id = paramMap['id'];
+      this.email = paramMap['email'];
+
       if (!this.token) {
         console.log('missing token');
         return;
       }
+
+      if (!this.id) {
+        console.log('missing id');
+        return;
+      }
+
+      if (!this.email) {
+        console.log('missing email');
+        return;
+      }
+
       this.redirectUrl = paramMap['redirectUrl'];
       if (!this.redirectUrl) {
         console.log('missing redirect url');
@@ -34,7 +50,7 @@ export class AppComponent {
       this.failureRedirectUrl = paramMap['failureRedirectUrl'];
 
       this.http
-        .post(verifyEndpoint, { token: this.token })
+        .post(verifyEndpoint, { id: this.id, email: this.email, token: this.token })
         .toPromise()
         .then(() => {
           window.location.href = this.redirectUrl;
