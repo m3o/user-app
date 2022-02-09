@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
 const verifyEndpoint =
-  'https://angry-cori-854281.netlify.app/.netlify/functions/verify';
+  'https://user.m3o.com/.netlify/functions/verify';
 
 @Component({
   selector: 'app-root',
