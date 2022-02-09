@@ -23,8 +23,6 @@ exports.handler = async function (event, context) {
       "user",
       "VerifyEmail",
       {
-	id: body.id,
-	email: body.email,
         token: body.token,
       }
     );
